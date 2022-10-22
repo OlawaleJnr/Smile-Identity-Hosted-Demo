@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smile Identity</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css">
+		<link rel="stylesheet" href="css/style.css">
+  <body>
+		<div id="root" class="flex antialiased align-items-center w-100 overflow-hidden vh-100 position-relative bg-dark-theme">
+      <div class="pages">
+        <div class="page one">
+          <div class="dotted-circle one"></div>
+          <div class="dotted-circle two"></div>
+          <div class="dotted-circle three"></div>
+          <div class="dotted-circle four"></div>
+          <div class="dotted-circle five"></div>
+          <div class="dotted-circle six"></div>
+          <div class="dotted-circle seven"></div>
+          <div class="mx-auto relative text-center app-body">
+            <div class="logo py-3">
+              <img src="logo.svg" alt="logo" class="app-logo" id="logo">
+            </div>
+            <div class="view-wrapper pt-5">
+              <div class="view-inner">
+                <h4 class="app-description">All Verification demo in one place</h4>
+                <label class="text-white label-passkey ft-20">Please enter the password to view demo</label>
+                <div class="otp-form mx-auto py-4 margin-auto">
+                  <form action="" autocomplete="off">
+                    <div class="otp-form-row text-center">
+                      <input type="text" id="otp1" class="otp-form-col otp-input form-control" maxlength="1" required="required" onkeyup="move(event, '', 'otp1', 'otp2')">
+                      <input type="text" id="otp2" class="otp-form-col otp-input form-control" maxlength="1" required="required" onkeyup="move(event, 'otp1', 'otp2', 'otp3')">
+                      <input type="text" id="otp3" class="otp-form-col otp-input form-control" maxlength="1" required="required" onkeyup="move(event, 'otp2', 'otp3', 'otp4')">
+                      <input type="text" id="otp4" class="otp-form-col otp-input form-control" maxlength="1" required="required" onkeyup="move(event, 'otp3', 'otp4', 'otp5')">
+                      <input type="text" id="otp5" class="otp-form-col otp-input form-control" maxlength="1" required="required" onkeyup="move(event, 'otp4', 'otp5', 'otp6')">
+                      <input type="text" id="otp6" class="otp-form-col otp-input form-control" maxlength="1" required="required" onkeyup="move(event, 'otp5', 'otp6', 'otp6')">
+                    </div>
+                  </form>
+
+                  <div class="btn-toggle-switch pt-85 text-center">
+                    <div class="app-btn">
+                      <button type="button" onclick="enableLightMode()" id="btn_light_mode_toggle" class="btn btn-primary app-btn-curved dark text-white">
+                        Light Mode
+                        <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon ml-1 mr-0" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="5" x2="12" y2="5.01"></line><line x1="17" y1="7" x2="17" y2="7.01"></line><line x1="19" y1="12" x2="19" y2="12.01"></line><line x1="17" y1="17" x2="17" y2="17.01"></line><line x1="12" y1="19" x2="12" y2="19.01"></line><line x1="7" y1="17" x2="7" y2="17.01"></line><line x1="5" y1="12" x2="5" y2="12.01"></line><line x1="7" y1="7" x2="7" y2="7.01"></line></svg>
+                      </button>
+                      <button type="button" onclick="disableLightMode()" class="btn btn-primary app-btn-curved lt_toggle text-white">
+                        Dark Mode
+                        <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon ml-1 mr-0" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page two">
+          <div class="dotted-circle one"></div>
+          <div class="dotted-circle two"></div>
+          <div class="dotted-circle three"></div>
+          <div class="dotted-circle four"></div>
+          <div class="dotted-circle five"></div>
+          <div class="dotted-circle six"></div>
+          <div class="dotted-circle seven"></div>
+          <div class="mx-auto relative text-center app-body">
+            <div class="logo py-3">
+              <img src="logo.svg" alt="logo" class="app-logo" id="logo">
+            </div>
+            <div class="view-wrapper pt-5">
+              <div class="view-inner">
+                <h4 class="app-description">All Verification demo in one place</h4>
+                <div class="wrap-layout px-5 position-relative">
+                  <div class="row pt-5">
+                    <div class="col-lg-4 col-12 col-md-4 col-sm-4">
+                      <div class="card-trapezium p-3 text-left">
+                        <img alt="" src="https://razorpay.com/build/browser/static/current-account.24d6f91e.svg" loading="lazy" class="cut-card-logo css-0">
+                        <div style="position: absolute; inset: 0px;">
+                          <svg viewBox="0 0 448 225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="css-lqelpq"><path d="m 0 6 a 6 6 0 0 1 6 -6 h 349 a 16 16 0 0 1 11 5 l 77 77 a 16 16 0 0 1 5 11 v 126 a 6 6 0 0 1 -6 6 h -436 a 6 6 0 0 1 -6 -6 z" fill="#0B161B"></path>
+                          </svg>
+                        </div>
+                        <div class="content">
+                          <div class="content-heading">
+                            <h3 class="font-weight-bold">Hosted Page</h3>
+                          </div>
+                          <p class="content-text font-weight-normal">Integrate identity verification on your server</p>
+                          <a href="">Continue</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-12 col-md-4 col-sm-4">
+                      <div class="card-trapezium p-3 text-left">
+                        <span><i class="fas fa-home cut-card-logo css-0"></i></span>
+                        <!-- <img alt="" src="https://razorpay.com/build/browser/static/current-account.24d6f91e.svg" loading="lazy" class="cut-card-logo css-0"> -->
+                        <div style="position: absolute; inset: 0px;">
+                          <svg viewBox="0 0 448 225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="css-lqelpq"><path d="m 0 6 a 6 6 0 0 1 6 -6 h 349 a 16 16 0 0 1 11 5 l 77 77 a 16 16 0 0 1 5 11 v 126 a 6 6 0 0 1 -6 6 h -436 a 6 6 0 0 1 -6 -6 z" fill="#0B161B"></path>
+                          </svg>
+                        </div>
+                        <div class="content">
+                          <div class="content-heading">
+                            <h3 class="font-weight-bold">Facial authentication</h3>
+                          </div>
+                          <p class="content-text font-weight-normal">Verify identity of users with facial authentication</p>
+                          <a href="./facial-authentication.html">Continue</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-12 col-md-4 col-sm-4">
+                      <div class="card-trapezium p-3 text-left">
+                        <img alt="" src="https://razorpay.com/build/browser/static/current-account.24d6f91e.svg" loading="lazy" class="cut-card-logo css-0">
+                        <div style="position: absolute; inset: 0px;">
+                          <svg viewBox="0 0 448 225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="css-lqelpq"><path d="m 0 6 a 6 6 0 0 1 6 -6 h 349 a 16 16 0 0 1 11 5 l 77 77 a 16 16 0 0 1 5 11 v 126 a 6 6 0 0 1 -6 6 h -436 a 6 6 0 0 1 -6 -6 z" fill="#0B161B"></path>
+                          </svg>
+                        </div>
+                        <div class="content">
+                          <div class="content-heading">
+                            <h3 class="font-weight-bold">Document verification</h3>
+                          </div>
+                          <p class="content-text font-weight-normal">Easily capture and verify government-issued IDs</p>
+                          <a href="./document-verification.html">Continue</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="btn-toggle-switch pt-85 text-center">
+                    <div class="app-btn">
+                      <button type="button" onclick="enableLightMode()" class="btn btn-primary app-btn-curved dark text-white">
+                        Light Mode
+                        <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon ml-1 mr-0" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="5" x2="12" y2="5.01"></line><line x1="17" y1="7" x2="17" y2="7.01"></line><line x1="19" y1="12" x2="19" y2="12.01"></line><line x1="17" y1="17" x2="17" y2="17.01"></line><line x1="12" y1="19" x2="12" y2="19.01"></line><line x1="7" y1="17" x2="7" y2="17.01"></line><line x1="5" y1="12" x2="5" y2="12.01"></line><line x1="7" y1="7" x2="7" y2="7.01"></line></svg>
+                      </button>
+                      <button type="button" onclick="disableLightMode()" class="btn btn-primary app-btn-curved lt_toggle text-white">
+                        Dark Mode
+                        <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon ml-1 mr-0" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path></svg>
+                      </>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/js/all.min.js"></script>
+    <script>
+      const move = (event, previous, current, next) => {
+        const length = $(`#${current}`).val().length;
+        const maxlength = document.getElementById(current).getAttribute('maxlength');
+        length == maxlength && next != '' ? $(`#${next}`).focus() : '';
+        event.key === 'Backspace' && previous != '' ? $(`#${previous}`).focus() : '';
+        if(current == 'otp6' && length == maxlength) {
+          slide('next');
+        }else if(current == 'otp1' && length != maxlength) {
+          alert('Kindly enter a password');
+        }
+      }
+
+      const theme = document.getElementById('root');
+      let lightMode = localStorage.getItem('light-mode');
+
+      const enableLightMode = () => {
+        console.log('light_mode');
+        theme.classList.add('bg-light-theme');
+        theme.classList.add('transition');
+        theme.classList.remove('bg-dark-theme');
+        $('.logo').html('<img src="logo-dark.svg" alt="logo" class="app-logo" id="logo">');
+        $('.app-description, .label-passkey').removeClass('text-white');
+        $('.app-description, .label-passkey').addClass('text-dark');
+        $('.otp-form .form-control').removeClass('otp-border-light');
+        $('.otp-form .form-control').addClass('otp-border-dark');
+        localStorage.setItem("light-mode", "enabled");
+      }
+
+      const disableLightMode = () => {
+        theme.classList.remove("bg-light-theme");
+        theme.classList.add('transition');
+        theme.classList.add("bg-dark-theme");
+        $('.logo').html('<img src="logo.svg" alt="logo" class="app-logo" id="logo">');
+        $('.app-description, .label-passkey').removeClass('text-dark');
+        $('.app-description, .label-passkey').addClass('text-white');
+        $('.otp-form .form-control').removeClass('otp-border-dark');
+        $('.otp-form .form-control').addClass('otp-border-light');
+        localStorage.setItem("light-mode", "disabled");
+      };
+
+      if (lightMode === "enabled") {
+        enableLightMode(); // set state of darkMode on page load
+      }
+
+      const pages = document.querySelectorAll('.page');
+      const translateAmount = 100;
+      let translate = 0;
+
+      const slide = (direction) => {
+        direction === 'next' ? translate-=translateAmount : translate+=translateAmount;
+        pages.forEach(pages => (pages.style.transform = `translateX(${translate}%)`))
+      }
+    </script>
+	</body>
+</html>

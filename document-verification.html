@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Verification</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.css">
+  <link rel="stylesheet" href="css/facial-auth.css">
+</head>
+<body>
+  <div class="root">
+    <div class="container-fluid">
+      <div class="row vh-100">
+        <div class="col-lg-3 bg-blue">
+          <div class="container text-left px-5 py-3">
+            <div class="logo py-6">
+              <img src="logo-dark.svg" alt="logo">
+            </div>
+            <div class="vh-75 mt-40">
+              <div class="py-3">
+                <h4 class="ft-14 font-weight-normal">Fast Conversation</h4>
+                <p class="ft-11 font-weight-light">Build trust, convert and onboard real customers with facial authentication and document verification
+                </p>
+              </div>
+              <div class="py-3">
+                <h4 class="ft-14 font-weight-normal">Know your customer</h4>
+                <p class="ft-11 font-weight-light">Stop identity fraud, know your customers with identity verification
+                </p>
+              </div>
+              <div class="py-3">
+                <h4 class="ft-14 font-weight-normal">Flag repeat attempts</h4>
+                <p class="ft-11 font-weight-light">Identify recurring attempts to create new accounts, whether it’s a different person or the same person with fake documents
+                </p>
+              </div>
+            </div>
+          <div class="position-relative mt-130">
+              <ul class="d-flex m-0 p-0 justify-content-between">
+                <li class="ft-11 d-inline-block"><a href="javascript:void(0)" class="text-black font-weight-light">Privacy Policy</a></li>
+                <li class="ft-11 d-inline-block"><a href="javascript:void(0)" class="text-black font-weight-light">Terms & Conditions</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 bg-white">
+          <div class="container px-5 pt-lg-3">
+            <div class="py-6 px-lg-5">
+              <div class="vh-75 px-lg-5">
+                <p>Document Verification</p>
+                <div class="form-range mb-2" id="range-simple"></div>
+                <form action="">
+                  <div class="mb-3 pb-3">
+                    <label class="form-label">Select Country</label>
+                    <select type="text" class="form-select" placeholder="Select a date" id="select-tags" value="">
+                      <option value="">Please select country</option>
+                      <option value="Nigeria">Nigeria</option>
+                      <option value="Kenya">Kenya</option>
+                      <option value="Ghana">Ghana</option>
+                    </select>
+                  </div>
+                  <div class="mb-3 pb-2">
+                    <label class="form-label">Select ID Type</label>
+                    <select type="text" class="form-select" placeholder="Select a date" id="select-tags" value="">
+                      <option value="">ID Type</option>
+                      <option value="Facial Verification">Facial Verification</option>
+                      <option value="Biometric Authentication">Biometric Authentication</option>
+                    </select>
+                  </div>
+                  <label class="form-check py-3">
+                    <input class="form-check-input" type="checkbox" id="documentCheck">
+                    <span class="form-check-label">I consent to the collection, use and disclosure of my personal data for identity verification and safety purposes</span>
+                  </label>
+                  <button type="button" id="snapDocumentBtn" class="btn btn-primary w-100 py-2">
+                    Snap Document
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+  <script src="https://cdn.smileidentity.com/js/v1.0.0-beta.7/smart-camera-web.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.1/nouislider.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#snapDocumentBtn').attr('disabled', true);
+      $('#documentCheck').change(function() {
+        var documentVerificationCheckStatus = $('#documentCheck').prop('checked');
+        if (!documentVerificationCheckStatus) {
+          $('#snapDocumentBtn').attr('disabled', true);
+        }else {
+          $('#snapDocumentBtn').attr('disabled', false);
+        }
+      })
+      // Insert new rule to an existing CSS stylesheet
+      const element = document.querySelector('#camera-screen h1');
+      const stylesheet = element.sheet;
+      stylesheet.replaceSync('.some { color: blue; }');
+      element.css('font-size', '14px');
+    });
+  </script>
+  <script>
+    // @formatter:off
+    document.addEventListener("DOMContentLoaded", function () {
+        window.noUiSlider && (noUiSlider.create(document.getElementById('range-simple'), {
+            start: 20,
+            connect: [true, false],
+            step: 10,
+            range: {
+              min: 0,
+              max: 100
+            }
+        }));
+    });
+    // @formatter:on
+  </script>
+</body>
+</html>
