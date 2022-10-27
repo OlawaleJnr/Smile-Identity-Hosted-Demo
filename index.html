@@ -41,13 +41,13 @@
 
                   <div class="btn-toggle-switch pt-85 text-center">
                     <div class="app-btn">
-                      <button type="button" onclick="enableLightMode()" id="btn_light_mode_toggle" class="btn btn-primary app-btn-curved dark text-white">
-                        Light Mode
+                      <button type="button" onclick="enableLightMode()" id="btn_light_mode_toggle" class="btn btn-primary app-btn-curved dark text-white font-weight-600">
+                        Light mode
                         <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon ml-1 mr-0" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="3"></circle><line x1="12" y1="5" x2="12" y2="5.01"></line><line x1="17" y1="7" x2="17" y2="7.01"></line><line x1="19" y1="12" x2="19" y2="12.01"></line><line x1="17" y1="17" x2="17" y2="17.01"></line><line x1="12" y1="19" x2="12" y2="19.01"></line><line x1="7" y1="17" x2="7" y2="17.01"></line><line x1="5" y1="12" x2="5" y2="12.01"></line><line x1="7" y1="7" x2="7" y2="7.01"></line></svg>
                       </button>
-                      <button type="button" onclick="disableLightMode()" class="btn btn-primary app-btn-curved lt_toggle text-white">
-                        Dark Mode
+                      <button type="button" onclick="disableLightMode()" id="btn_dark_mode_toggle" class="btn btn-primary app-btn-curved lt_toggle text-white font-weight-600">
+                        Dark mode
                         <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon ml-1 mr-0" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path></svg>
                       </button>
@@ -178,6 +178,9 @@
         $('.app-description, .label-passkey').addClass('text-dark');
         $('.otp-form .form-control').removeClass('otp-border-light');
         $('.otp-form .form-control').addClass('otp-border-dark');
+        $('#btn_light_mode_toggle').addClass('vt--1');
+        $('#btn_dark_mode_toggle').addClass('vt--2');
+        $('.app-description').css('font-weight', '400');
         localStorage.setItem("light-mode", "enabled");
       }
 
@@ -190,6 +193,9 @@
         $('.app-description, .label-passkey').addClass('text-white');
         $('.otp-form .form-control').removeClass('otp-border-dark');
         $('.otp-form .form-control').addClass('otp-border-light');
+        $('#btn_light_mode_toggle').removeClass('vt--1');
+        $('#btn_dark_mode_toggle').removeClass('vt--2');
+        $('.app-description').css('font-weight', '600');
         localStorage.setItem("light-mode", "disabled");
       };
 

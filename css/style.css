@@ -71,6 +71,25 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+.font-weight-600 {
+  font-weight: 600 !important;
+}
+
+#btn_light_mode_toggle.btn-primary:focus,  #btn_light_mode_toggle.btn-primary:hover{
+  color: #FFFFFF !important;
+  background-color: #0065AB !important;
+  border: none !important;
+  box-shadow: none;
+}
+
+#btn_dark_mode_toggle.btn-primary:focus{
+  background-color: #FFFFFF;
+  border-color: unset;
+  color: #0065AB !important;
+  border: none;
+  box-shadow: none;
+}
+
 .pages {
   display: flex;
   width: 200%;
@@ -138,7 +157,7 @@ body {
 #root .pages .page.one .app-body::after, #root .pages .page.two .app-body::after {
   content: '';
   background: url('../assets/images/waves.svg') no-repeat center center/cover;
-  position: absolute;
+  position: relative;
   opacity: 1;
   left: 0px;
   bottom: 0;
@@ -214,7 +233,7 @@ body {
 
 .app-description {
   color: var(--swft-white);
-  font-weight: 600;
+  font-weight: 400;
   font-size: 40px;
   line-height: 67.2px;
 }
@@ -485,7 +504,7 @@ svg {
   #root .pages .page.one .app-body::after, #root .pages .page.two .app-body::after {
     content: '';
     background: url('../assets/images/waves.svg') no-repeat center center/cover;
-    position: absolute;
+    position: relative;
     opacity: 1;
     top: 440px;
     left: 0px;
@@ -542,4 +561,14 @@ svg {
     left: 290px;
     top: 425px;
   }
+}
+
+.vt--1 {
+  background:#0065AB;
+  color: #FFFFFF;
+}
+
+.vt--2 {
+  border: 1px solid #0065AB;
+  background-color: #FFFFFF;
 }
